@@ -11,7 +11,8 @@ const list = () => {
   s3.listObjects({
     Bucket: bucket_name
   }, function(err, data){
-    data.contents.forEach(x => {
+    //console.log(data);
+    data.Contents.map(x => {
       console.log(x.Key);
     })
   })
@@ -34,6 +35,8 @@ const add = (title,body)=> {
 
 const remove = (title) => {
   console.log('remove', title);
+  
+  
 }
 
 module.exports =  {
